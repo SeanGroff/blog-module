@@ -1,12 +1,23 @@
 <template>
-<article :class="$style.preview">
+<article
+  :class="$style.preview"
+  class="article--preview">
   <router-link
       :to="{ name: '@nuxtjs/blog:article', params: Object.assign({ id }, $attrs) }"
-  >{{ title }}</router-link>
-  <div :class="$style.meta">
-    <time :datatime="published_at">{{ published_at | formatDate }}</time>
+      class="article--title"
+  >
+    {{ title }}
+  </router-link>
+  <div
+    :class="$style.meta"
+    class="article--meta">
+    <time
+      :datatime="published_at"
+      class="article--time">
+      {{ published_at | formatDate }}
+    </time>
   </div>
-  <p>{{ description }}</p>
+  <p class="article--description">{{ description }}</p>
 </article>
 </template>
 
